@@ -22,7 +22,7 @@ class Lesson(models.Model):
     image = models.ImageField(upload_to="users/lessons_images/", verbose_name="Картинка", help_text='Загрузите картинку',
                                blank=True, null=True)
     video = models.CharField(max_length=255, blank=True, null=True, verbose_name="Ссылка на видео")
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name="lessons", verbose_name="Курс")
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name="Курс")
 
     def __str__(self):
         return self.name
